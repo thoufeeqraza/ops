@@ -11,6 +11,7 @@ function Widget({ s }) {
         <div className="widget-title">
           {s.id} · {s.title}
           <span className="badge q">Q{s.question}</span>
+          {s.data?.demo && <span className="badge demo" title="Add this provider's key/config to server/.env to go live">demo</span>}
           {s.stale && <span className="badge stale">stale</span>}
         </div>
         <div className="widget-meta">Last updated: {timeAgo(s.lastUpdated)}</div>
@@ -50,7 +51,7 @@ export default function App() {
       <header className="topbar">
         <div>
           <h1>THE OPERATIONS DASHBOARD</h1>
-          <div className="sub">Sources → Cache → Widgets → Trigger rules → Action Queue · 8 live public sources</div>
+          <div className="sub">Sources → Cache → Widgets → Trigger rules → Action Queue · 25 sources (8 public · 10 key-based · 7 scrapers)</div>
         </div>
         <div className="meta">
           {refreshedAt ? `Synced ${timeAgo(refreshedAt)}` : 'Loading…'}<br />
