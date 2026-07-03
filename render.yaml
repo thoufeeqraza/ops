@@ -1,0 +1,21 @@
+# Render.com blueprint — one Docker web service serving API + frontend.
+# Create the repo on GitHub, then on Render: New + → Blueprint → pick this repo.
+services:
+  - type: web
+    name: operations-dashboard
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: NODE_ENV
+        value: production
+      # CORS not needed (frontend served from same origin), but set if you split them:
+      - key: CORS_ORIGIN
+        value: "*"
+      # OPTIONAL persistence — add a MongoDB Atlas URI to persist cache + action queue:
+      - key: MONGO_URI
+        sync: false

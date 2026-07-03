@@ -1,0 +1,16 @@
+{
+  "name": "operations-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Operations Dashboard — live sources → cache → widgets → triggers → action queue",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "build": "npm --prefix client run build",
+    "start": "node server/src/index.js",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

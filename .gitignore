@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Secrets — never commit
+.env
+**/.env
+.env.local
+*.local
+
+# Build output
+dist/
+build/
+client/dist/
+
+# Cache / data
+*.sqlite
+*.sqlite3
+.cache/
+data/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
